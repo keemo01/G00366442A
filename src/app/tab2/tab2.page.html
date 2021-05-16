@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Studi Ghibli People
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,24 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Studio Ghibli</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <app-explore-container name="Tab 1 page"></app-explore-container>
+  
+  <ion-card *ngFor="let anime of AnimeData">
+    <ion-card-header><!---The code below will get information from the api in the anime services it will show the titles,director producers etc--->
+      <ion-card-title>{{anime.people}}</ion-card-title>
+      <ion-card-subtitle>{{anime.original_title}}</ion-card-subtitle>
+      <ion-card-subtitle>{{anime.original_title_romanised}}</ion-card-subtitle>
+      <ion-card-content>{{anime.description}}</ion-card-content>
+      <ion-card-content>{{anime.director}}</ion-card-content>
+      <ion-card-content>{{anime.producer}}</ion-card-content>
+      <ion-card-content>{{anime.release_date}}</ion-card-content>
+      <ion-card-content>{{anime.running_time}}</ion-card-content>
+      <ion-card-content>{{anime.rt_score}}</ion-card-content>
+    </ion-card-header>
+    </ion-card>
+
 </ion-content>
